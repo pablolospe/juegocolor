@@ -1,0 +1,112 @@
+.square  {
+    float: left;
+    height: 0;
+    width: 30%;
+    padding-bottom: 30%;
+    border-radius: 6px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 600px;
+    transition-duration: 0.5s;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.body{
+    background-color: #232323;
+}
+
+h1 {
+    letter-spacing: 30px;
+    transition: 1s;
+    letter-spacing: 50px;
+    border-radius: 5px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+    font-size: 250%;
+    color: rgb(255,255 ,255, 0.8);
+    -webkit-text-stroke: 0.7px rgb (0,0,0);
+    ;
+
+}
+
+#colorDisplay {
+    letter-spacing: 9px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 105%;
+    color: rgb(255,255 ,255, 0.5)
+}
+
+
+#stripe {
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+    background-color: lightgrey;
+    height: 30px;
+}
+
+#reset{
+    text-align: left;
+}
+
+.selected {
+    color: crimson;
+    border-style:inset;  
+    border-width: 2.5px;
+    border-radius: 8px;
+}
+
+button {
+    border-radius: 5px;
+    border: none;
+    background-color: inherit;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size: inherit;
+    outline: none;
+    padding: 1px 7px;
+    writing-mode: horizontal-tb !important;
+    box-sizing: border-box;
+    float: left;
+}
+
+#easyhard{
+    border-radius: 5px;
+    border: none;
+    background-color: inherit;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size: inherit;
+    outline: none;
+    padding: 1px 7px;
+    writing-mode: horizontal-tb !important;
+    box-sizing: border-box;
+    float: right;
+}
+
+
+.message {
+    text-align: center;
+    font-size: 25px;
+    border-radius: 5px;
+    letter-spacing: 1px;    
+    color: rgba(0,0,0,0.7);
+    border-radius: 5px;
+    font-weight: bold;
+}
