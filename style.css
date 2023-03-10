@@ -27,6 +27,7 @@ h1 {
 }
 #colorDisplay {
     display: flex;
+    text-align: center;
     justify-content: center;
     letter-spacing: 7px;
     text-align: center;
@@ -41,20 +42,13 @@ h1 {
     background-color: lightgrey;
     height: 30px;
 } */
-.selected {
-    border-radius: 8px;
-    color: crimson;
-    border-style:inset;  
-    border-width: 2.5px;
-    background-color: inherit;
-}
-button{
+.button{
     display: flex;
     /* align-items: center; */
     background-color: inherit;
     border-radius: 5px;
     border: none;
-    font-size: inherit;
+    /* font-size: inherit; */
     /* text-transform: uppercase; */
     /* height: 100%; */
     /* font-weight: 700; */
@@ -93,7 +87,9 @@ button{
 }
 
 .message {
+    display: flex;
     text-align: center;
+    align-self: flex-end;
     font-size: 20px;
     letter-spacing: 1px;    
     color: rgba(0,0,0,0.7);
@@ -119,4 +115,11 @@ button{
     align-self: flex-end;
     color: aliceblue;
     text-align: center;
+}
+.selected {
+    border-radius: 8px;
+    color: crimson;
+    border-style:inset;  
+    border-width: 2.5px;
+    background-color: inherit;
 }

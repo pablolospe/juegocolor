@@ -83,7 +83,13 @@ function init() {
             }
 
             else {
-                message.textContent = ("CORRECTO!!!");
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Adivinaste!',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
                 h1.style.background = pickedColor;
                 changeColors(pickedColor);
                 squares = 0
