@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUEGO COLOR</title>
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css" type="text/css">
-</head>
-<body class="body">
-    <h1>JUEGO <br><span id= "colorDisplay"> </span><br> COLOR</h1>
-    
-    <div id="stripe"> 
-        <button id="reset" type="reset">CAMBIAR COLORES</button> 
-        
-        <span class="message"> </span> 
-        
-        <span id="easyhard">
-            <button class="selected" id="hard">DIFICIL</button>
-            <button id='easy'>FÁCIL</button>
-        </span>
-    </div>
 
-    <div class="container">
-        <div class="square"></div>
-        <div class="square"></div>       
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JUEGO COLOR</title>
+        <link rel="shortcut icon" href="favicon.ico">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" href="style.css" type="text/css">
+    </head>
 
-    <script src="color_game.js"></script>
-</body>
+    <body class="body">
+        <div id="container">
+            <button id="alert">instrucciones</button>
+            <h1>JUEGO COLOR</h1>
+            <p id="colorDisplay"> </p>
+            <div id="stripe">
+                <button id="reset" type="reset">CAMBIAR COLORES</button>
+
+                <span class="message"> </span>
+
+                <span id="easyhard">
+                    <button class="selected" id="hard">DIFICIL</button>
+                    <button id="easy">FÁCIL</button>
+                </span>
+            </div>
+
+            <div class="squareContainer">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+
+        </div>
+        <script src="color_game.js"></script>
+    </body>
+
 </html>

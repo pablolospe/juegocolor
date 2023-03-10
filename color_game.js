@@ -5,14 +5,27 @@ let squares = document.querySelectorAll(".square")
 let body = document.querySelectorAll("body")
 let message = document.querySelector(".message")
 let pickedColor = ""
-let button = document.querySelector("button")
+let button = document.getElementById("reset")
 let hard = document.getElementById("hard")
 let easy = document.getElementById("easy")
 let numberOfSquares = 6
+let alert = document.getElementById("alert")
+
 
 function pickColor() {
     pickedColor = colors[Math.floor(Math.random() * numberOfSquares)]
 }
+
+alert.addEventListener("click", function (){
+    Swal.fire({
+        title: 'Como se juega a esta cosa?',
+        text: 'Adiviná el color sabiendo que cantidad de R(rojo), G(verde), B(azul) contiene.',
+        imageUrl: 'https://imborrable.com/wp-content/uploads/2022/10/rgb-colores.png',
+        imageWidth: 400,
+        // imageHeight: 400,
+        imageAlt: 'Custom image',
+      })
+    })
 
 function randomColor() {
     var r = Math.floor(Math.random() * 256)
