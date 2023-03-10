@@ -34,9 +34,6 @@ h1 {
     font-size: 205%;
     color: rgb(255,255 ,255, 0.8)
 }
-#alert{
-    color: aliceblue;
-}
 /* #stripe {
     border-radius: 5px;
     text-align: center;
@@ -53,9 +50,8 @@ h1 {
 }
 button{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     background-color: inherit;
-    
     border-radius: 5px;
     border: none;
     font-size: inherit;
@@ -116,4 +112,11 @@ button{
     margin-bottom: 10px;
     max-width: auto;
     transition-duration: 0.5s;
+}
+#alert{
+    display: flex;
+    align-content: center;
+    align-self: flex-end;
+    color: aliceblue;
+    text-align: center;
 }
