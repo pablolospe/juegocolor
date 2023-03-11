@@ -27,6 +27,14 @@ alert.addEventListener("click", function (){
       })
     })
 
+let adivinaste = function(){Swal.fire({
+    position: 'center-top',
+    icon: 'success',
+    title: 'Adivinaste!',
+    showConfirmButton: false,
+    timer: 1500
+  })}
+
 function randomColor() {
     var r = Math.floor(Math.random() * 256)
     var g = Math.floor(Math.random() * 256)
@@ -79,24 +87,18 @@ function init() {
         squares[i].addEventListener("click", function () {
 
             if (colors[i] !== pickedColor) {
-                squares[i].style.background = "rgb(35,35,35)";
+                squares[i].style.background = "rgb(240, 248, 255)";
                 message.style.visibility = "visible";
                 message.textContent = ("INTENTA NUEVAMENTE")
             }
 
             else {
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: 'Adivinaste!',
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-                  h1.style.background = pickedColor;
-                  changeColors(pickedColor);
-                  squares = 0
-                  button.textContent = ("JUGAR DE NUEVO")
-                  message.style.visibility = "hidden";
+                adivinaste()
+                h1.style.background = pickedColor;
+                changeColors(pickedColor);
+                squares = 0
+                button.textContent = ("JUGAR DE NUEVO")
+                message.style.visibility = "hidden";
             }
 
         })
@@ -120,11 +122,12 @@ hard.addEventListener("click", function () {
         colorDisplay.textContent = (pickedColor);
         squares[i].addEventListener("click", function () {
             if (colors[i] !== pickedColor) {
-                squares[i].style.backgroundColor = "rgb(35,35,35)";
+                squares[i].style.backgroundColor = "rgb(240, 248, 255)";
                 message.style.visibility = "visible";
                 message.textContent = ("INTENTA NUEVAMENTE")
             }
             else {
+                message.style.visibility = "visible";
                 message.textContent = ("CORRECTO!!!");
                 h1.style.background = pickedColor;
                 //changeColors(pickedColor);
@@ -151,10 +154,10 @@ easy.addEventListener("click", function () {
             if (colors[i] === pickedColor) {
                 message.textContent = ("CORRECTO!");
                 h1.style.background = pickedColor;
-                //changeColors(pickedColor);      
+                //changeColors(pickedColor);
             }
             else {
-                squares[i].style.background = "rgb(35,35,35)";
+                squares[i].style.background = "rgb(240, 248, 255)";
                 message.textContent = ("INTENTA NUEVAMENTE")
             }
         })

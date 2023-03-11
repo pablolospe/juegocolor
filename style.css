@@ -1,13 +1,13 @@
 .body{
-    background-color:aliceblue
+    background-color:#f0f8ff
 }
-#container {
+.container {
     display: flex;
     flex-direction: column;
     align-content: space-around;
     flex-wrap: wrap;
 }
-h1 {
+h1{
     display: flex;
     padding: 0px 20px 0px 20px;
     justify-content: center;
@@ -17,10 +17,11 @@ h1 {
     border-radius: 10px;
     margin-left: 100px;
     margin-right: 100px;
-    /* padding-top: 2%;
-    padding-bottom: 2%; */
+    padding-top: 2%;
+    padding-bottom: 2%;
     font-size: 200%;
     -webkit-text-stroke: 0.7px rgb (0, 0 ,0 );
+    color: lightgray;
 }
 #colorDisplay {
     display: flex;
@@ -61,6 +62,9 @@ h1 {
     padding: 1px 7px;
     writing-mode: horizontal-tb !important;
     box-sizing: border-box;
+    border-radius: 8px;
+    border-style:outset;  
+    border-width: 2px;
 }
 #easyhard {
     display: flex;
@@ -71,11 +75,8 @@ h1 {
     font-size: inherit;
     letter-spacing: 1px;
     outline: none;
-    
-    /* writing-mode: horizontal-tb !important; */
     box-sizing: border-box;
 }
-
 .message {
     display: flex;
     flex-direction: column;
@@ -86,6 +87,7 @@ h1 {
     color: rgba(0,0,0,0.7);
     visibility: hidden;
     margin: 10px;
+    transition-duration: 0.5s;
 }
 .squareContainer {
     display: flex;
@@ -95,27 +97,27 @@ h1 {
 }
 .square  {
     align-items: center;
-    /* max-height: auto; */
-    width: 30%;
+    width: 29%;
     padding-bottom: 30%;
     border-radius: 6px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border: solid 2px rgb(211, 211, 211, 0.5) ;
     transition-duration: 0.5s;
 }
 #alert{
-    display: flex;
-    align-content: center;
-    align-self: flex-end;
-    color: aliceblue;
-    text-align: center;
+    color: rgb(70, 130, 180);
+    border-radius: 5px;
+    margin: -30px 200px 0px 200px;
+    background-color: rgb(240, 248, 255, 80%);
+    
 }
 .selected {
+    /* color: crimson; */
+    font-weight: bolder;
     border-radius: 8px;
-    color: crimson;
     border-style:inset;  
-    border-width: 2.5px;
-    /* background-color: inherit; */
+    border-width: 2px;
 }
