@@ -24,35 +24,30 @@ h1 {
 }
 #colorDisplay {
     display: flex;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
     letter-spacing: 7px;
     text-align: center;
     text-transform: uppercase;
     font-size: 205%;
-    color: steelblue
+    color: steelblue;
+    margin: 5px;
 }
 #stripe {
     border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     background-color: lightgrey;
+    padding: 5px;
 }
 .button{
     display: flex;
-    /* align-items: center; */
     background-color: inherit;
     border-radius: 5px;
     border: none;
-    /* height: 100%; */
-    /* font-weight: 700; */
     color: steelblue;
-    /* letter-spacing: 1px; */
-    /* outline: none; */
-    /* padding: 1px 7px; */
-    /* writing-mode: horizontal-tb !important; */
-    
 }
 #reset {
     float: left;
@@ -69,6 +64,7 @@ h1 {
 }
 #easyhard {
     display: flex;
+    align-items: center;
     float: right;
     height: 100%;
     background-color: inherit;
@@ -82,12 +78,14 @@ h1 {
 
 .message {
     display: flex;
+    flex-direction: column;
     text-align: center;
     align-self: flex-end;
     font-size: 20px;
     letter-spacing: 1px;    
     color: rgba(0,0,0,0.7);
-    font-weight: bold;
+    visibility: hidden;
+    margin: 10px;
 }
 .squareContainer {
     display: flex;
@@ -119,5 +117,5 @@ h1 {
     color: crimson;
     border-style:inset;  
     border-width: 2.5px;
-    background-color: inherit;
+    /* background-color: inherit; */
 }

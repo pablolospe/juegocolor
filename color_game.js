@@ -54,7 +54,8 @@ function reset() {
         squares[i].style.background = colors[i]
     };
     h1.style.background = "rgb(35,35,35)";
-    message.textContent = ("");
+    message.style.visibility = "hidden";
+    // message.textContent = ("xxx");
 }
 
 button.addEventListener("click", function () {
@@ -79,6 +80,7 @@ function init() {
 
             if (colors[i] !== pickedColor) {
                 squares[i].style.background = "rgb(35,35,35)";
+                message.style.visibility = "visible";
                 message.textContent = ("INTENTA NUEVAMENTE")
             }
 
@@ -90,10 +92,11 @@ function init() {
                     showConfirmButton: false,
                     timer: 1500
                   })
-                h1.style.background = pickedColor;
-                changeColors(pickedColor);
-                squares = 0
-                button.textContent = ("JUGAR DE NUEVO")
+                  h1.style.background = pickedColor;
+                  changeColors(pickedColor);
+                  squares = 0
+                  button.textContent = ("JUGAR DE NUEVO")
+                  message.style.visibility = "hidden";
             }
 
         })
@@ -118,6 +121,7 @@ hard.addEventListener("click", function () {
         squares[i].addEventListener("click", function () {
             if (colors[i] !== pickedColor) {
                 squares[i].style.backgroundColor = "rgb(35,35,35)";
+                message.style.visibility = "visible";
                 message.textContent = ("INTENTA NUEVAMENTE")
             }
             else {
