@@ -51,7 +51,7 @@ h1{
     color: steelblue;
 }
 #reset {
-    float: left;
+    /* float: left; */
     border: none;
     background-color: inherit;
     height: 100%;
@@ -93,7 +93,6 @@ h1{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    
 }
 .square  {
     align-items: center;
@@ -112,7 +111,6 @@ h1{
     border-radius: 5px;
     margin: -30px 200px 0px 200px;
     background-color: rgb(240, 248, 255, 80%);
-    
 }
 .selected {
     /* color: crimson; */
@@ -120,4 +118,46 @@ h1{
     border-radius: 8px;
     border-style:inset;  
     border-width: 2px;
+}
+
+@media screen and (max-width:800px) {
+    .body{
+        max-width: 500px;
+    }
+    #colorDisplay {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        letter-spacing: 5px;
+        text-align: center;
+        font-size: 150%;
+        color: steelblue;
+        margin: 5px;
+    }
+    #stripe {
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: lightgrey;
+        padding: 0 35px 0 35px;
+    }
+    .squareContainer {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .square  {
+        align-items:flex-start;
+        width: 30%;
+        padding-bottom: 30%;
+        /* max-width: 100px; */
+        
+        border-radius: 6px;
+        
+        border: solid 2px rgb(211, 211, 211, 0.5) ;
+        transition-duration: 0.5s;
+    }
+
 }
