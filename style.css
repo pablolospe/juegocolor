@@ -141,7 +141,7 @@ h1{
         align-items: center;
         justify-content: space-around;
         background-color: lightgrey;
-        padding: 0 35px 0 35px;
+        padding: 5px 35px 5px 35px;
     }
     .squareContainer {
         display: flex;
