@@ -3,20 +3,19 @@ let h1 = document.querySelector("h1")
 let colorDisplay = document.getElementById("colorDisplay")
 let squares = document.querySelectorAll(".square")
 let body = document.querySelectorAll("body")
-let message = document.querySelector(".message")
+let message = document.getElementById("message")
 let pickedColor = ""
-let button = document.getElementById("reset")
+let resetButton = document.getElementById("reset")
 let hard = document.getElementById("hard")
 let easy = document.getElementById("easy")
 let numberOfSquares = 6
 let alert = document.getElementById("alert")
 
-
 function pickColor() {
     pickedColor = colors[Math.floor(Math.random() * numberOfSquares)]
 }
 
-alert.addEventListener("click", function (){
+alert.addEventListener("click", function () {
     Swal.fire({
         title: 'Como se juega a esta cosa?',
         text: 'Adiviná el color sabiendo que cantidad de R(rojo), G(verde), B(azul) contiene.',
@@ -24,16 +23,18 @@ alert.addEventListener("click", function (){
         imageWidth: 400,
         // imageHeight: 400,
         imageAlt: 'Custom image',
-      })
     })
+})
 
-let adivinaste = function(){Swal.fire({
-    position: 'center-top',
-    icon: 'success',
-    title: 'Adivinaste!',
-    showConfirmButton: false,
-    timer: 1500
-  })}
+let adivinaste = () => {
+    Swal.fire({
+        position: 'bottom',
+        icon: 'success',
+        title: 'Adivinaste!',
+        showConfirmButton: false,
+        timer: 1500
+    })
+}
 
 function randomColor() {
     var r = Math.floor(Math.random() * 256)
@@ -62,42 +63,37 @@ function reset() {
         squares[i].style.background = colors[i]
     };
     h1.style.background = "rgb(35,35,35)";
-    message.style.visibility = "hidden";
-    // message.textContent = ("xxx");
+    message.style.visibility = "visible";
+    message.textContent = "☝️";
 }
 
-button.addEventListener("click", function () {
+resetButton.addEventListener("click", function () {
     squares = document.querySelectorAll(".square");
-    reset()
     init()
 })
-
 
 function init() {
     //squares = document.querySelectorAll(".square");
     for (let i = 5; i + 4 > squares.length; i--) {
         squares[i].hidden = false
-        numberOfSquares = i
+        // numberOfSquares = i
     }
-
     for (let i = 0; i < squares.length; i++) {
         squares[i].style.background = colors[i]
         pickColor();
         colorDisplay.textContent = (pickedColor);
+        h1.style.background = "rgb(35,35,35)";
         squares[i].addEventListener("click", function () {
-
             if (colors[i] !== pickedColor) {
                 squares[i].style.background = "rgb(240, 248, 255)";
                 message.style.visibility = "visible";
                 message.textContent = ("INTENTA NUEVAMENTE")
-            }
-
-            else {
+            } else {
                 adivinaste()
                 h1.style.background = pickedColor;
                 changeColors(pickedColor);
                 squares = 0
-                button.textContent = ("JUGAR DE NUEVO")
+                resetButton.textContent = ("JUGAR DE NUEVO")
                 message.style.visibility = "hidden";
             }
 
@@ -154,11 +150,11 @@ easy.addEventListener("click", function () {
             if (colors[i] === pickedColor) {
                 message.textContent = ("CORRECTO!");
                 h1.style.background = pickedColor;
-                //changeColors(pickedColor);
+                console.log(numberOfSquares);
             }
             else {
                 squares[i].style.background = "rgb(240, 248, 255)";
-                message.textContent = ("INTENTA NUEVAMENTE")
+                message.textContent = ("INTENTA NUEVAMENTE");
             }
         })
     }

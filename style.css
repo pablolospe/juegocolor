@@ -67,17 +67,17 @@ h1{
     border-width: 2px;
 }
 #easyhard {
+    background-color: inherit;
     display: flex;
     align-items: center;
     float: right;
-    height: 100%;
-    background-color: inherit;
-    font-size: inherit;
+    /* height: 100%; */
+    /* font-size: inherit; */
     letter-spacing: 1px;
     outline: none;
     box-sizing: border-box;
 }
-.message {
+#message {
     display: flex;
     flex-direction: column;
     text-align: center;
