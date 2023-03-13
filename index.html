@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JUEGO COLOR</title>
-        <link rel="shortcut icon" href="favicon.ico">
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <link rel="stylesheet" href="style.css" type="text/css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUEGO COLOR</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
 
-    <body class="body">
-        <div class="container">
-            <div class="container">
+<body class="body">
+    <div class="container">
+        <div class="container2">
+            <div>
                 <h1>JUEGO COLOR</h1>
                 <button id="alert">instrucciones</button>
                 <p id="colorDisplay">
@@ -21,28 +22,30 @@
             <div>
                 <h3 id="message">☝️</h3>
             </div>
+
             <div id="stripe">
                 <div>
                     <button class="button" id="reset" type="reset">CAMBIAR COLORES</button>
                 </div>
-                
+
                 <div id="easyhard">
                     <button class="selected button" id="hard">DIFICIL</button>
                     <button class="button" id="easy">FÁCIL</button>
                 </div>
             </div>
-
-            <div class="squareContainer">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-            </div>
-
         </div>
-        <script src="color_game.js"></script>
-    </body>
+
+        <div id="easySqueares" class="squareContainer">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+    </div>
+
+    <script src="color_game.js"></script>
+</body>
 
 </html>

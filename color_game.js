@@ -8,6 +8,7 @@ let pickedColor = ""
 let resetButton = document.getElementById("reset")
 let hard = document.getElementById("hard")
 let easy = document.getElementById("easy")
+let easySqueares = document.getElementById("easySqueares")
 let numberOfSquares = 6
 let alert = document.getElementById("alert")
 
@@ -21,6 +22,7 @@ alert.addEventListener("click", function () {
         text: 'Adiviná el color sabiendo que cantidad de R(rojo), G(verde), B(azul) contiene.',
         imageUrl: 'https://imborrable.com/wp-content/uploads/2022/10/rgb-colores.png',
         imageWidth: 400,
+        width: 350,
         // imageHeight: 400,
         imageAlt: 'Custom image',
     })
@@ -28,9 +30,10 @@ alert.addEventListener("click", function () {
 
 let adivinaste = () => {
     Swal.fire({
-        position: 'bottom',
+        position: 'center',
         icon: 'success',
         title: 'Adivinaste!',
+        width: 300,
         showConfirmButton: false,
         timer: 1500
     })
@@ -69,6 +72,7 @@ function reset() {
 
 resetButton.addEventListener("click", function () {
     squares = document.querySelectorAll(".square");
+    reset()
     init()
 })
 
@@ -103,6 +107,7 @@ function init() {
 
 hard.addEventListener("click", function () {
     squares = document.querySelectorAll(".square");
+    easySqueares.classList.remove("easySqueares")
     this.classList.add("selected");
     easy.classList.remove("selected");
     numberOfSquares = 6;
@@ -111,7 +116,6 @@ hard.addEventListener("click", function () {
         squares[i].hidden = false
         numberOfSquares = i
     }
-
     for (let i = 0; i < squares.length; i++) {
         squares[i].style.background = colors[i]
         pickColor();
@@ -134,6 +138,7 @@ hard.addEventListener("click", function () {
 
 easy.addEventListener("click", function () {
     squares = document.querySelectorAll(".square");
+    easySqueares.classList.add("easySqueares")
     this.classList.add("selected")
     hard.classList.remove("selected")
     numberOfSquares = 3
