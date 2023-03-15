@@ -11,6 +11,7 @@ let easy = document.getElementById("easy")
 let easySqueares = document.getElementById("easySqueares")
 let numberOfSquares = 6
 let alert = document.getElementById("alert")
+let flag = true
 
 function pickColor() {
     pickedColor = colors[Math.floor(Math.random() * numberOfSquares)]
@@ -30,7 +31,8 @@ alert.addEventListener("click", function () {
 
 //PROBAR CON UN FLAG PARA DESACTIVAR, FALTA REGULAR EN RESET EN FACIL 
 //y EN RESPOSIVE CUNADO PAS DE 3 a 6 queda Apilado.
-let adivinaste = () => {
+let adivinaste = (flag) => {
+    flag &&
     Swal.fire({
         position: 'center',
         icon: 'success',
@@ -79,11 +81,6 @@ resetButton.addEventListener("click", function () {
 })
 
 function init() {
-    //squares = document.querySelectorAll(".square");
-    for (let i = 5; i + 4 > squares.length; i--) {
-        squares[i].hidden = false
-        // numberOfSquares = i
-    }
     for (let i = 0; i < squares.length; i++) {
         squares[i].style.background = colors[i]
         pickColor();
@@ -95,15 +92,16 @@ function init() {
                 message.style.visibility = "visible";
                 message.textContent = ("INTENTA NUEVAMENTE")
             } else {
-                adivinaste()
+                adivinaste(flag)
+                flag = false
                 h1.style.background = pickedColor;
                 changeColors(pickedColor);
                 squares = 0
                 resetButton.textContent = ("JUGAR DE NUEVO")
                 message.style.visibility = "hidden";
             }
-
         })
+        flag = true
     }
 }
 
@@ -114,28 +112,29 @@ hard.addEventListener("click", function () {
     easy.classList.remove("selected");
     numberOfSquares = 6;
     reset()
+    init()
     for (let i = 5; i + 4 > squares.length; i--) {
         squares[i].hidden = false
         numberOfSquares = i
     }
-    for (let i = 0; i < squares.length; i++) {
-        squares[i].style.background = colors[i]
-        pickColor();
-        colorDisplay.textContent = (pickedColor);
-        squares[i].addEventListener("click", function () {
-            if (colors[i] !== pickedColor) {
-                squares[i].style.backgroundColor = "rgb(240, 248, 255)";
-                message.style.visibility = "visible";
-                message.textContent = ("INTENTA NUEVAMENTE")
-            }
-            else {
-                message.style.visibility = "visible";
-                message.textContent = ("CORRECTO!!!");
-                h1.style.background = pickedColor;
-                //changeColors(pickedColor);
-            }
-        })
-    }
+    // for (let i = 0; i < squares.length; i++) {
+    //     squares[i].style.background = colors[i]
+    //     pickColor();
+    //     colorDisplay.textContent = (pickedColor);
+    //     squares[i].addEventListener("click", function () {
+    //         if (colors[i] !== pickedColor) {
+    //             squares[i].style.backgroundColor = "rgb(240, 248, 255)";
+    //             message.style.visibility = "visible";
+    //             message.textContent = ("INTENTA NUEVAMENTE")
+    //         }
+    //         else {
+    //             message.style.visibility = "visible";
+    //             message.textContent = ("CORRECTO!!!");
+    //             h1.style.background = pickedColor;
+    //             //changeColors(pickedColor);
+    //         }
+    //     })
+    // }
 })
 
 easy.addEventListener("click", function () {
@@ -145,26 +144,29 @@ easy.addEventListener("click", function () {
     hard.classList.remove("selected")
     numberOfSquares = 3
     reset()
+    init()
+
+    //esconde 3 cuadrados
     for (let i = 5; i + 4 > squares.length; i--) {
         squares[i].hidden = true;
         numberOfSquares = i
     }
-    for (let i = 0; i <= 2; i++) {
-        squares[i].style.background = colors[i]
-        pickColor();
-        colorDisplay.textContent = (pickedColor);
-        squares[i].addEventListener("click", function () {
-            if (colors[i] === pickedColor) {
-                message.textContent = ("CORRECTO!");
-                h1.style.background = pickedColor;
-                console.log(numberOfSquares);
-            }
-            else {
-                squares[i].style.background = "rgb(240, 248, 255)";
-                message.textContent = ("INTENTA NUEVAMENTE");
-            }
-        })
-    }
+    // for (let i = 0; i <= 2; i++) {
+    //     squares[i].style.background = colors[i]
+    //     pickColor();
+    //     colorDisplay.textContent = (pickedColor);
+    //     squares[i].addEventListener("click", function () {
+    //         if (colors[i] === pickedColor) {
+    //             message.textContent = ("CORRECTO!");
+    //             h1.style.background = pickedColor;
+    //             console.log(numberOfSquares);
+    //         }
+    //         else {
+    //             squares[i].style.background = "rgb(240, 248, 255)";
+    //             message.textContent = ("INTENTA NUEVAMENTE");
+    //         }
+    //     })
+    // }
 })
 
 reset()
