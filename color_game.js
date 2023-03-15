@@ -61,6 +61,11 @@ function setSquares() {
         colors[i] = randomColor();
     }
 }
+function stopSquares() {
+    for (let i = 0; i < colors.length; i++) {
+        colors[i] = pickedColor();
+    }
+}
 
 function reset() {
     for (let i = 0; i < squares.length; i++) {
@@ -113,28 +118,12 @@ hard.addEventListener("click", function () {
     numberOfSquares = 6;
     reset()
     init()
+
+    //muestra 6 cuadrados
     for (let i = 5; i + 4 > squares.length; i--) {
         squares[i].hidden = false
         numberOfSquares = i
     }
-    // for (let i = 0; i < squares.length; i++) {
-    //     squares[i].style.background = colors[i]
-    //     pickColor();
-    //     colorDisplay.textContent = (pickedColor);
-    //     squares[i].addEventListener("click", function () {
-    //         if (colors[i] !== pickedColor) {
-    //             squares[i].style.backgroundColor = "rgb(240, 248, 255)";
-    //             message.style.visibility = "visible";
-    //             message.textContent = ("INTENTA NUEVAMENTE")
-    //         }
-    //         else {
-    //             message.style.visibility = "visible";
-    //             message.textContent = ("CORRECTO!!!");
-    //             h1.style.background = pickedColor;
-    //             //changeColors(pickedColor);
-    //         }
-    //     })
-    // }
 })
 
 easy.addEventListener("click", function () {
@@ -151,22 +140,6 @@ easy.addEventListener("click", function () {
         squares[i].hidden = true;
         numberOfSquares = i
     }
-    // for (let i = 0; i <= 2; i++) {
-    //     squares[i].style.background = colors[i]
-    //     pickColor();
-    //     colorDisplay.textContent = (pickedColor);
-    //     squares[i].addEventListener("click", function () {
-    //         if (colors[i] === pickedColor) {
-    //             message.textContent = ("CORRECTO!");
-    //             h1.style.background = pickedColor;
-    //             console.log(numberOfSquares);
-    //         }
-    //         else {
-    //             squares[i].style.background = "rgb(240, 248, 255)";
-    //             message.textContent = ("INTENTA NUEVAMENTE");
-    //         }
-    //     })
-    // }
 })
 
 reset()
