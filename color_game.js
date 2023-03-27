@@ -29,8 +29,6 @@ alert.addEventListener("click", function () {
     })
 })
 
-//PROBAR CON UN FLAG PARA DESACTIVAR, FALTA REGULAR EN RESET EN FACIL 
-//y EN RESPOSIVE CUNADO PAS DE 3 a 6 queda Apilado.
 let adivinaste = (flag) => {
     flag &&
     Swal.fire({
